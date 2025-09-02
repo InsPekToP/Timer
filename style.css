@@ -1,0 +1,804 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.paused * {
+    animation-play-state: paused !important;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* animation: changeColor 60s linear infinite; */
+}
+
+/* 2592000s */
+.card_days {
+    animation: changeColor 720s linear infinite;
+}
+
+/* 86400s */
+.card_hours {
+    animation: changeColor 180s linear infinite;
+
+}
+
+.card_minutes {
+    animation: changeColor 360s linear infinite;
+
+}
+
+.card_seconds {
+    animation: changeColor 60s linear infinite;
+}
+
+@keyframes changeColor{
+    0%
+    {
+        filter: hue-rotate(0deg);
+    }
+    100%
+    {
+        filter: hue-rotate(720deg)
+    }
+}
+
+.time {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.time svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+
+.time svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #191919;
+    stroke-width: 10;
+    transform: translate(5px,5px);
+}
+
+.time svg circle:nth-child(2) {
+    stroke: #00ff43;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    /* animation: animate 60s steps(60) infinite; */
+}
+
+
+/* COUNTUP */
+.countup-cards .time_days svg circle:nth-child(2) {
+    animation: animate 2592000s steps(30) infinite;
+}
+
+.countup-cards .time_hours svg circle:nth-child(2) {
+    animation: animate 43200s steps(12) infinite;
+}
+
+.countup-cards .time_minutes svg circle:nth-child(2){
+    animation: animate 3600s steps(60) infinite;
+}
+
+.countup-cards .time_seconds svg circle:nth-child(2) {
+    animation: animate 60s steps(60) infinite;
+}
+
+@keyframes animate {
+    0%
+    {
+       stroke-dashoffset: 440; 
+    }
+
+    100%
+    {
+       stroke-dashoffset: 0; 
+    }
+}
+
+/* COUNTDOWN */
+.countdown-cards .time_days svg circle:nth-child(2) {
+    animation: animate-reverse 2592000s steps(30) infinite;
+}
+
+.countdown-cards .time_hours svg circle:nth-child(2) {
+    animation: animate-reverse 43200s steps(12) infinite;
+}
+
+.countdown-cards .time_minutes svg circle:nth-child(2) {
+    animation: animate-reverse 3600s steps(60) infinite;
+}
+
+.countdown-cards .time_seconds svg circle:nth-child(2) {
+    animation: animate-reverse 60s steps(60) infinite;
+}
+
+@keyframes animate-reverse {
+    0%
+    {
+       stroke-dashoffset: 0; 
+    }
+
+    100%
+    {
+       stroke-dashoffset: 440; 
+    }
+}
+
+.dot {
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    z-index: 10;
+    /* animation: animateDot 60s steps(60) infinite; */
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #00ff43;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff43,
+    0 0 30px #00ff43;
+}
+
+
+/* COUNTUP */
+.countup-cards .dot_days {
+    animation: animateDot 2592000s steps(30) infinite;
+}
+
+.countup-cards .dot_hours {
+    animation: animateDot 43200s steps(12) infinite;
+}
+
+.countup-cards .dot_minutes {
+    animation: animateDot 3600s steps(60) infinite;
+}
+
+.countup-cards .dot_seconds {
+    animation: animateDot 60s steps(60) infinite;
+}
+
+
+@keyframes animateDot {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* COUNTDOWN */
+.countdown-cards .dot_days {
+    animation: animateDot-reverse 2592000s steps(30) infinite;
+}
+
+.countdown-cards .dot_hours {
+    animation: animateDot-reverse 43200s steps(12) infinite;
+}
+
+.countdown-cards .dot_minutes {
+    animation: animateDot-reverse 3600s steps(60) infinite;
+}
+
+.countdown-cards .dot_seconds {
+    animation: animateDot-reverse 60s steps(60) infinite;
+}
+
+
+@keyframes animateDot-reverse {
+    0%
+    {
+        transform: rotate(360deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
+
+
+.time .number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.time .number div {
+    display: flex;
+    overflow: hidden;
+}
+
+.time .number div h2 {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.5em;
+    height: 45px;
+}
+
+.time .number div h2 span {
+    height: 50px;
+    line-height: 50px;
+    /* animation: animateNumber1 60s steps(6) infinite; */
+}
+
+.time .number p{
+    font-weight: 300;
+    font-size: 0.75em;
+    color:rgba(255,255,255,0.5)
+}
+
+
+/* COUNTUP */
+.countup-cards .time .number_days div h2 span {
+    animation: animateNumber1Days 2592000s steps(3) infinite;
+}
+
+.countup-cards .time .number_hours div h2:first-child {
+    animation: animateNumber1Hours 86400s steps(1, end) infinite;
+}
+
+.countup-cards .time .number_minutes div h2 span {
+    animation: animateNumber1 3600s steps(6) infinite;
+}
+
+.countup-cards .time .number_seconds div h2 span {
+    animation: animateNumber1 60s steps(6) infinite;
+}
+
+
+@keyframes animateNumber1 {
+    0%
+    
+    {
+        transform: translateY(0px);
+    }
+    100%
+    /* height: 50px * 6 = 300 */
+    {
+        transform: translateY(-300px);
+    }
+    
+}
+
+@keyframes animateNumber1Days {
+    0%
+    
+    {
+        transform: translateY(0px);
+    }
+    100%
+    /* height: 50px * 3 = 150 */
+    {
+        transform: translateY(-150px);
+    }
+    
+}
+
+
+
+/* height: 50px * 3 = 150 */
+@keyframes animateNumber1Hours {
+    0%
+    {
+        transform: translateY(0px);
+    }
+
+    41.66%
+    {
+        transform: translateY(-50px);
+    }
+    
+    83.33%
+    {
+        transform: translateY(-100px);
+    }
+
+    100%
+    {
+        transform: translateY(-150px);
+    }
+    
+}
+
+
+/* COUNTDOWN */
+.countdown-cards .time .number_days div h2 span {
+    animation: animateNumber1Days-reverse 2592000s steps(3) infinite;
+}
+
+.countdown-cards .time .number_hours div h2:first-child {
+    animation: animateNumber1Hours-reverse 86400s steps(1, end) infinite;
+}
+
+.countdown-cards .time .number_minutes div h2 span {
+    animation: animateNumber1-reverse 3600s steps(6) infinite;
+}
+
+.countdown-cards .time .number_seconds div h2 span {
+    animation: animateNumber1-reverse 60s steps(6) infinite;
+}
+
+
+@keyframes animateNumber1-reverse {
+    0%
+    
+    {
+        transform: translateY(-250px);
+    }
+    100%
+    /* height: 50px * 6 = 300 */
+    {
+        transform: translateY(50px);
+    }
+    
+}
+
+@keyframes animateNumber1Days-reverse {
+    0%
+    
+    {
+        transform: translateY(-100px);
+    }
+    100%
+    /* height: 50px * 3 = 150 */
+    {
+        transform: translateY(50px);
+    }
+    
+}
+
+
+
+/* height: 50px * 3 = 150 */
+@keyframes animateNumber1Hours-reverse {
+    0%
+    {
+        transform: translateY(-100px);
+    }
+
+    16.66%
+    {
+        transform: translateY(-50px);
+    }
+    
+    58.26%
+    {
+        transform: translateY(0px);
+    }
+
+    100%
+    {
+        transform: translateY(50px);
+    }
+    
+}
+
+
+/* COUNTUP */
+.countup-cards .time .number_days div h2:nth-child(2) span {
+    animation: animateNumber2 864000s steps(10) infinite;
+}
+
+.countup-cards .time .number_hours div h2:nth-child(2) span {
+    animation: animateNumber2Hours 86400s steps(24) infinite;
+}
+
+.countup-cards .time .number_minutes div h2:nth-child(2) span {
+    animation: animateNumber2 600s steps(10) infinite;
+}
+
+.countup-cards .time .number_seconds div h2:nth-child(2) span {
+    animation: animateNumber2 10s steps(10) infinite;
+}
+
+@keyframes animateNumber2 {
+    0%
+    
+    {
+        transform: translateY(0px);
+    }
+    100%
+    /* height: 50px * 10 = 500 */
+    {
+        transform: translateY(-500px);
+    }
+    
+}
+
+@keyframes animateNumber2Hours {
+    0%
+    
+    {
+        transform: translateY(0px);
+    }
+    100%
+    /* height: 50px * 24 = 1200 */
+    {
+        transform: translateY(-1200px);
+    }
+    
+}
+
+
+/* COUNTDOWN */
+.countdown-cards .time .number_days div h2:nth-child(2) span {
+    animation: animateNumber2-reverse 864000s steps(10) infinite;
+}
+
+.countdown-cards .time .number_hours div h2:nth-child(2) span {
+    animation: animateNumber2Hours-reverse 86400s steps(24) infinite;
+}
+
+.countdown-cards .time .number_minutes div h2:nth-child(2) span {
+    animation: animateNumber2-reverse 600s steps(10) infinite;
+}
+
+.countdown-cards .time .number_seconds div h2:nth-child(2) span {
+    animation: animateNumber2-reverse 10s steps(10) infinite;
+}
+
+@keyframes animateNumber2-reverse {
+    0%
+    
+    {
+        transform: translateY(-450px);
+    }
+    100%
+    /* height: 50px * 10 = 500 */
+    {
+        transform: translateY(50px);
+    }
+    
+}
+
+@keyframes animateNumber2Hours-reverse {
+    0%
+    
+    {
+        transform: translateY(-1150px);
+    }
+    100%
+    /* height: 50px * 24 = 1200 */
+    {
+        transform: translateY(50px);
+    }
+    
+}
+
+/* BUTTON */
+
+.fast-btn {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.fast-btn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.fast-btn:active {
+    color: #000
+}
+
+.fast-btn:active:after {
+    background: transparent;
+}
+
+.fast-btn:hover:before {
+    opacity: 1;
+}
+
+.fast-btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* FAST */
+/* В 100 РАЗ БЫСТРЕЕ */
+/* Дни */
+main.fastx100 .card_days {
+    animation-duration: 7.2s !important; /* вместо 720s */
+}
+main.fastx100 .time_days svg circle:nth-child(2) {
+    animation-duration: 25920s !important; /* вместо 2592000s */
+}
+main.fastx100 .dot_days {
+    animation-duration: 25920s !important; /* вместо 2592000s */
+}
+main.fastx100 .time .number_days div h2 span {
+    animation-duration: 25920s !important; /* вместо 2592000s */
+}
+main.fastx100 .time .number_days div h2:nth-child(2) span {
+    animation-duration: 8640s !important; /* вместо 864000s */
+}
+
+
+/* Часы */
+main.fastx100 .card_hours {
+    animation-duration: 864s !important; /* вместо 86400s*/
+}
+main.fastx100 .time_hours svg circle:nth-child(2) {
+    animation-duration: 432s !important;  /* вместо 43200s */
+}
+main.fastx100 .dot_hours {
+    animation-duration: 432s !important; /* 43200s */
+}
+/* Отличается от всех остальных */
+main.fastx100 .time .number_hours div h2:first-child {
+    animation-duration: 864s !important; /* вместо 86400s */
+}
+
+main.fastx100 .time .number_hours div h2:nth-child(2) span {
+    animation-duration: 864s !important; /* вместо 86400s */
+}
+
+
+/* Минуты */
+main.fastx100 .card_minutes {
+    animation-duration: 3.6s !important; /* вместо 360s */
+}
+main.fastx100 .time_minutes svg circle:nth-child(2) {
+    animation-duration: 36s !important; /* вместо 3600s */
+}
+main.fastx100 .dot_minutes {
+    animation-duration: 36s !important; /* вместо 3600s */
+}
+main.fastx100 .time .number_minutes div h2 span {
+    animation-duration: 36s !important; /* вместо 3600s */
+}
+main.fastx100 .time .number_minutes div h2:nth-child(2) span {
+    animation-duration: 6s !important; /* вместо 600s */
+}
+
+
+/* Секунды */
+main.fastx100 .card_seconds {
+    animation-duration: 0.6s !important; /* вместо 60s */
+}
+main.fastx100 .time_seconds svg circle:nth-child(2) {
+    animation-duration: 0.6s !important; /* вместо 60s */
+}
+main.fastx100 .dot_seconds {
+    animation-duration: 0.6s !important; /* вместо 60s */
+}
+main.fastx100 .time .number_seconds div h2 span {
+    animation-duration: 0.6s !important; /* вместо 60s */
+}
+main.fastx100 .time .number_seconds div h2:nth-child(2) span {
+    animation-duration: 0.1s !important; /* вместо 10s */
+}
+
+
+/* В 1000 РАЗ БЫСТРЕЕ */
+
+/* Дни */
+main.fastx1000 .card_days {
+    animation-duration: 7.2s !important; /* вместо 720s */
+}
+main.fastx1000 .time_days svg circle:nth-child(2) {
+    animation-duration: 2592s !important; /* вместо 2592000s */
+}
+main.fastx1000 .dot_days {
+    animation-duration: 2592s !important; /* вместо 2592000s */
+}
+main.fastx1000 .time .number_days div h2 span {
+    animation-duration: 2592s !important; /* вместо 2592000s */
+}
+main.fastx1000 .time .number_days div h2:nth-child(2) span {
+    animation-duration: 864s !important; /* вместо 864000s */
+}
+
+
+/* Часы */
+main.fastx1000 .card_hours {
+    animation-duration: 86.4s !important; /* вместо 86400s*/
+}
+main.fastx1000 .time_hours svg circle:nth-child(2) {
+    animation-duration: 43.2s !important;  /* вместо 43200s */
+}
+main.fastx1000 .dot_hours {
+    animation-duration: 43.2s !important; /* 43200s */
+}
+/* Отличается от всех остальных */
+main.fastx1000 .time .number_hours div h2:first-child {
+    animation-duration: 86.4s !important; /* вместо 86400s */
+}
+
+main.fastx1000 .time .number_hours div h2:nth-child(2) span {
+    animation-duration: 86.4s !important; /* вместо 86400s */
+}
+
+
+/* Минуты */
+main.fastx1000 .card_minutes {
+    animation-duration: 0.36s !important; /* вместо 360s */
+}
+main.fastx1000 .time_minutes svg circle:nth-child(2) {
+    animation-duration: 3.6s !important; /* вместо 3600s */
+}
+main.fastx1000 .dot_minutes {
+    animation-duration: 3.6s !important; /* вместо 3600s */
+}
+main.fastx1000 .time .number_minutes div h2 span {
+    animation-duration: 3.6s !important; /* вместо 3600s */
+}
+main.fastx1000 .time .number_minutes div h2:nth-child(2) span {
+    animation-duration: 0.6s !important; /* вместо 600s */
+}
+
+
+/* Секунды */
+main.fastx1000 .card_seconds {
+    animation-duration: 0.06s !important; /* вместо 60s */
+}
+main.fastx1000 .time_seconds svg circle:nth-child(2) {
+    animation-duration: 0.06s !important; /* вместо 60s */
+}
+main.fastx1000 .dot_seconds {
+    animation-duration: 0.06s !important; /* вместо 60s */
+}
+main.fastx1000 .time .number_seconds div h2 span {
+    animation-duration: 0.06s !important; /* вместо 60s */
+}
+main.fastx1000 .time .number_seconds div h2:nth-child(2) span {
+    animation-duration: 0.01s !important; /* вместо 10s */
+}
+
+/* В 10000 РАЗ БЫСТРЕЕ */
+
+/* Дни */
+main.fastx10000 .card_days {
+    animation-duration: 7.2s !important; /* вместо 720s */
+}
+main.fastx10000 .time_days svg circle:nth-child(2) {
+    animation-duration: 259.2s !important; /* вместо 2592000s */
+}
+main.fastx10000 .dot_days {
+    animation-duration: 259.2s !important; /* вместо 2592000s */
+}
+main.fastx10000 .time .number_days div h2 span {
+    animation-duration: 259.2s !important; /* вместо 2592000s */
+}
+main.fastx10000 .time .number_days div h2:nth-child(2) span {
+    animation-duration: 86.4s !important; /* вместо 864000s */
+}
+
+
+/* Часы */
+main.fastx10000 .card_hours {
+    animation-duration: 8.64s !important; /* вместо 86400s*/
+}
+main.fastx10000 .time_hours svg circle:nth-child(2) {
+    animation-duration: 4.32s !important;  /* вместо 43200s */
+}
+main.fastx10000 .dot_hours {
+    animation-duration: 4.32s !important; /* 43200s */
+}
+/* Отличается от всех остальных */
+main.fastx10000 .time .number_hours div h2:first-child {
+    animation-duration: 8.64s !important; /* вместо 86400s */
+}
+
+main.fastx10000 .time .number_hours div h2:nth-child(2) span {
+    animation-duration: 8.64s !important; /* вместо 86400s */
+}
+
+
+/* Минуты */
+main.fastx10000 .card_minutes {
+    animation-duration: 0.036s !important; /* вместо 360s */
+}
+main.fastx10000 .time_minutes svg circle:nth-child(2) {
+    animation-duration: 0.36s !important; /* вместо 3600s */
+}
+main.fastx10000 .dot_minutes {
+    animation-duration: 0.36s !important; /* вместо 3600s */
+}
+main.fastx10000 .time .number_minutes div h2 span {
+    animation-duration: 0.36s !important; /* вместо 3600s */
+}
+main.fastx10000 .time .number_minutes div h2:nth-child(2) span {
+    animation-duration: 0.06s !important; /* вместо 600s */
+}
+
+
+/* Секунды */
+main.fastx10000 .card_seconds {
+    animation-duration: 0.006s !important; /* вместо 60s */
+}
+main.fastx10000 .time_seconds svg circle:nth-child(2) {
+    animation-duration: 0.006s !important; /* вместо 60s */
+}
+main.fastx10000 .dot_seconds {
+    animation-duration: 0.006s !important; /* вместо 60s */
+}
+main.fastx10000 .time .number_seconds div h2 span {
+    animation-duration: 0.006s !important; /* вместо 60s */
+}
+main.fastx10000 .time .number_seconds div h2:nth-child(2) span {
+    animation-duration: 0.001s !important; /* вместо 10s */
+}

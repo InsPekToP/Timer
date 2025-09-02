@@ -1,0 +1,224 @@
+/* В 100 РАЗ БЫСТРЕЕ */
+/* Дни */
+main.fastx100 .card_days {
+    animation-duration: 7.2s !important; /* вместо 720s */
+}
+main.fastx100 .time_days svg circle:nth-child(2) {
+    animation-duration: 25920s !important; /* вместо 2592000s */
+}
+main.fastx100 .dot_days {
+    animation-duration: 25920s !important; /* вместо 2592000s */
+}
+main.fastx100 .time .number_days div h2 span {
+    animation-duration: 25920s !important; /* вместо 2592000s */
+}
+main.fastx100 .time .number_days div h2:nth-child(2) span {
+    animation-duration: 8640s !important; /* вместо 864000s */
+}
+
+
+/* Часы */
+main.fastx100 .card_hours {
+    animation-duration: 864s !important; /* вместо 86400s*/
+}
+main.fastx100 .time_hours svg circle:nth-child(2) {
+    animation-duration: 432s !important;  /* вместо 43200s */
+}
+main.fastx100 .dot_hours {
+    animation-duration: 432s !important; /* 43200s */
+}
+/* Отличается от всех остальных */
+main.fastx100 .time .number_hours div h2:first-child {
+    animation-duration: 864s !important; /* вместо 86400s */
+}
+
+main.fastx100 .time .number_hours div h2:nth-child(2) span {
+    animation-duration: 864s !important; /* вместо 86400s */
+}
+
+
+/* Минуты */
+main.fastx100 .card_minutes {
+    animation-duration: 3.6s !important; /* вместо 360s */
+}
+main.fastx100 .time_minutes svg circle:nth-child(2) {
+    animation-duration: 36s !important; /* вместо 3600s */
+}
+main.fastx100 .dot_minutes {
+    animation-duration: 36s !important; /* вместо 3600s */
+}
+main.fastx100 .time .number_minutes div h2 span {
+    animation-duration: 36s !important; /* вместо 3600s */
+}
+main.fastx100 .time .number_minutes div h2:nth-child(2) span {
+    animation-duration: 6s !important; /* вместо 600s */
+}
+
+
+/* Секунды */
+main.fastx100 .card_seconds {
+    animation-duration: 0.6s !important; /* вместо 60s */
+}
+main.fastx100 .time_seconds svg circle:nth-child(2) {
+    animation-duration: 0.6s !important; /* вместо 60s */
+}
+main.fastx100 .dot_seconds {
+    animation-duration: 0.6s !important; /* вместо 60s */
+}
+main.fastx100 .time .number_seconds div h2 span {
+    animation-duration: 0.6s !important; /* вместо 60s */
+}
+main.fastx100 .time .number_seconds div h2:nth-child(2) span {
+    animation-duration: 0.1s !important; /* вместо 10s */
+}
+
+
+/* В 1000 РАЗ БЫСТРЕЕ */
+
+/* Дни */
+main.fastx1000 .card_days {
+    animation-duration: 7.2s !important; /* вместо 720s */
+}
+main.fastx1000 .time_days svg circle:nth-child(2) {
+    animation-duration: 2592s !important; /* вместо 2592000s */
+}
+main.fastx1000 .dot_days {
+    animation-duration: 2592s !important; /* вместо 2592000s */
+}
+main.fastx1000 .time .number_days div h2 span {
+    animation-duration: 2592s !important; /* вместо 2592000s */
+}
+main.fastx1000 .time .number_days div h2:nth-child(2) span {
+    animation-duration: 864s !important; /* вместо 864000s */
+}
+
+
+/* Часы */
+main.fastx1000 .card_hours {
+    animation-duration: 86.4s !important; /* вместо 86400s*/
+}
+main.fastx1000 .time_hours svg circle:nth-child(2) {
+    animation-duration: 43.2s !important;  /* вместо 43200s */
+}
+main.fastx1000 .dot_hours {
+    animation-duration: 43.2s !important; /* 43200s */
+}
+/* Отличается от всех остальных */
+main.fastx1000 .time .number_hours div h2:first-child {
+    animation-duration: 86.4s !important; /* вместо 86400s */
+}
+
+main.fastx1000 .time .number_hours div h2:nth-child(2) span {
+    animation-duration: 86.4s !important; /* вместо 86400s */
+}
+
+
+/* Минуты */
+main.fastx1000 .card_minutes {
+    animation-duration: 0.36s !important; /* вместо 360s */
+}
+main.fastx1000 .time_minutes svg circle:nth-child(2) {
+    animation-duration: 3.6s !important; /* вместо 3600s */
+}
+main.fastx1000 .dot_minutes {
+    animation-duration: 3.6s !important; /* вместо 3600s */
+}
+main.fastx1000 .time .number_minutes div h2 span {
+    animation-duration: 3.6s !important; /* вместо 3600s */
+}
+main.fastx1000 .time .number_minutes div h2:nth-child(2) span {
+    animation-duration: 0.6s !important; /* вместо 600s */
+}
+
+
+/* Секунды */
+main.fastx1000 .card_seconds {
+    animation-duration: 0.06s !important; /* вместо 60s */
+}
+main.fastx1000 .time_seconds svg circle:nth-child(2) {
+    animation-duration: 0.06s !important; /* вместо 60s */
+}
+main.fastx1000 .dot_seconds {
+    animation-duration: 0.06s !important; /* вместо 60s */
+}
+main.fastx1000 .time .number_seconds div h2 span {
+    animation-duration: 0.06s !important; /* вместо 60s */
+}
+main.fastx1000 .time .number_seconds div h2:nth-child(2) span {
+    animation-duration: 0.01s !important; /* вместо 10s */
+}
+
+/* В 10000 РАЗ БЫСТРЕЕ */
+
+/* Дни */
+main.fastx10000 .card_days {
+    animation-duration: 7.2s !important; /* вместо 720s */
+}
+main.fastx10000 .time_days svg circle:nth-child(2) {
+    animation-duration: 259.2s !important; /* вместо 2592000s */
+}
+main.fastx10000 .dot_days {
+    animation-duration: 259.2s !important; /* вместо 2592000s */
+}
+main.fastx10000 .time .number_days div h2 span {
+    animation-duration: 259.2s !important; /* вместо 2592000s */
+}
+main.fastx10000 .time .number_days div h2:nth-child(2) span {
+    animation-duration: 86.4s !important; /* вместо 864000s */
+}
+
+
+/* Часы */
+main.fastx10000 .card_hours {
+    animation-duration: 8.64s !important; /* вместо 86400s*/
+}
+main.fastx10000 .time_hours svg circle:nth-child(2) {
+    animation-duration: 4.32s !important;  /* вместо 43200s */
+}
+main.fastx10000 .dot_hours {
+    animation-duration: 4.32s !important; /* 43200s */
+}
+/* Отличается от всех остальных */
+main.fastx10000 .time .number_hours div h2:first-child {
+    animation-duration: 8.64s !important; /* вместо 86400s */
+}
+
+main.fastx10000 .time .number_hours div h2:nth-child(2) span {
+    animation-duration: 8.64s !important; /* вместо 86400s */
+}
+
+
+/* Минуты */
+main.fastx10000 .card_minutes {
+    animation-duration: 0.036s !important; /* вместо 360s */
+}
+main.fastx10000 .time_minutes svg circle:nth-child(2) {
+    animation-duration: 0.36s !important; /* вместо 3600s */
+}
+main.fastx10000 .dot_minutes {
+    animation-duration: 0.36s !important; /* вместо 3600s */
+}
+main.fastx10000 .time .number_minutes div h2 span {
+    animation-duration: 0.36s !important; /* вместо 3600s */
+}
+main.fastx10000 .time .number_minutes div h2:nth-child(2) span {
+    animation-duration: 0.06s !important; /* вместо 600s */
+}
+
+
+/* Секунды */
+main.fastx10000 .card_seconds {
+    animation-duration: 0.006s !important; /* вместо 60s */
+}
+main.fastx10000 .time_seconds svg circle:nth-child(2) {
+    animation-duration: 0.006s !important; /* вместо 60s */
+}
+main.fastx10000 .dot_seconds {
+    animation-duration: 0.006s !important; /* вместо 60s */
+}
+main.fastx10000 .time .number_seconds div h2 span {
+    animation-duration: 0.006s !important; /* вместо 60s */
+}
+main.fastx10000 .time .number_seconds div h2:nth-child(2) span {
+    animation-duration: 0.001s !important; /* вместо 10s */
+}
